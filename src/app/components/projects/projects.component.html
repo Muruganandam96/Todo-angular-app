@@ -1,0 +1,22 @@
+<!-- <div class="project--container">
+    <h4 class="k__title">Projects</h4>
+    <app-kanban [projectDetails]="projectDetails"></app-kanban>
+</div> -->
+<div class="mt-64">
+    <h6 class="pl-3 text--secondary">ALL PROJECTS</h6>
+    <div class="project--container">
+        <div class="mb-s project--list text--secondary" [ngClass] = "{ 'active': project.isActive }" *ngFor = "let project of projectDetails"  (click)="navigateTo(project)" >
+            <span class="badge low">
+            </span>
+            {{ project.projectName }}
+        </div>
+        <hr class="mb-s">
+        <div class="mb-s add--project project--list text--secondary"  >
+            <span class="material-icons add--icon">
+                add
+                </span>
+            Add new
+        </div>
+    </div>
+</div>
+ 

@@ -1,0 +1,73 @@
+
+<div class="title--fixed">
+    <div class="menu--container">
+        <a class="menu">
+                <span class="material-icons">
+                        menu
+                </span>
+        </a>
+    </div>
+    <h4 class="project--title">{{projectName}}</h4>
+</div>
+<div class="d-flex no-wrap  mt-1 k--project mt-40  example-list"
+    cdkDropList
+    cdkDropListGroup
+    (cdkDropListDropped)="drop($event)"
+    cdkDropListOrientation="horizontal">
+    <div class="kanban example-box" *ngFor="let projectCategory of projectDetailCategory" cdkDrag>
+        <div class="kanban__title p-1">
+            <h5>{{projectCategory.categoryName}}</h5>
+        </div>
+            <app-kanban [projectDetails]= "projectCategory.tasks" 
+            [categoryID]="projectCategory.id" [projectID]="projectID" 
+            [kanbanType]="'DetailedView'"></app-kanban>
+    
+    </div>
+    <div class="kanban add--task">
+        <div class="kanban__title">
+            <form #categoryForm = "ngForm" (ngSubmit)="onSubmitCategory(categoryForm)">
+                <input type="text" 
+                placeholder="+ Add new"  
+                name="newCategory"
+                class="formcontrol" [(ngModel)]="newCategory">
+            </form>
+        </div>
+    </div>
+    <div class="dropdown--menu" appDropdown>
+        <div class="dropdowm--item">
+          Edit
+        </div>
+        <div class="dropdowm--item">
+          Delete
+        </div>
+      </div>
+</div>
+
+<!-- 
+    pay from drop-down
+    <div class="container">
+    <header>
+        <h4>Send</h4>
+    </header>
+    <div class="recipient">
+        <div class="avatar">
+
+        </div>
+        <div class="recipient--name">
+            <p>Alex Cramer</p>
+            <small>xxxx8976</small>
+        </div>
+    </div>
+        <div class="amount">
+            
+            <input class="amount--input" type="text" value="$1000">
+        </div>
+        <div class="accounts">
+            <label>Pay from</label>
+            <p>Checking A xxx7896</p>
+        </div>
+        <div class="btn-container">
+            
+            <button class="btn" type="submit">Button text</button>
+        </div>
+</div> -->

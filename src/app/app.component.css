@@ -1,0 +1,106 @@
+.projects--container {
+    width: 640px;
+    margin: auto;
+    padding:  var(--padding-desktop);
+}
+
+
+
+.card {
+    display: flex;
+    margin-top: 16px;
+    align-items: center;
+    background:  #fff;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.icon {
+    visibility: hidden;
+    position: relative;
+    color: #555;
+}
+
+.icon:hover::after {
+    content: '';
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: -7px;
+    left: -7px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+.card:hover .icon {
+    visibility: visible;
+}
+
+.project--name{
+    padding-left: 1rem;
+    font-size: 1rem;
+    flex: 1;
+}
+
+.pl-1 {
+    padding-left: 1rem;
+}
+
+.p-1 {
+    padding: 1rem;
+}
+form {
+    width: 100%;
+}
+
+.card input[type='text'] {
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    line-height: 150;
+    font-size: 1rem;
+}
+
+.d-flex{
+    display: flex;
+}
+
+.main {
+    width: 100%;
+    display: flex;
+    min-height: 100vh;
+    margin-left: 220px;
+    background-color: var(--light-bg);
+    overflow: auto;
+}
+
+
+
+
+.main::-webkit-scrollbar {
+   height: 16px;
+  }
+  
+.main::-webkit-scrollbar-track {
+    background: rgb(211, 215, 219, 0.65); 
+    border-radius: 6px;
+  }
+   
+
+.main::-webkit-scrollbar-thumb {
+    background: rgb(211, 215, 219); 
+    border-radius: 6px;
+    height: 12px;
+  }
+  
+.main::-webkit-scrollbar-thumb:hover {
+    background: rgb(211, 215, 219); 
+  }
+
+
+  @media only  screen and (max-width: 768px) {
+    .main {
+       margin-left: 0;
+       padding-right: var(--space-s);
+    }
+}

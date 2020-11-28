@@ -1,0 +1,57 @@
+.project--container {
+    margin: auto;
+    padding: 0.6rem;
+
+}
+
+.project--list {
+  padding: 0.6rem 1rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  border-radius: var(--space-s);
+  display: flex;
+  align-items: center;
+}
+
+.project--list.active {
+    background-color: var(--active);
+    color: var(--text-primary);
+}
+
+.project--list:hover {
+    background-color: var(--hover-bg);
+}
+
+.badge {
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    margin-right: var(--space-m);
+    border-radius: 50%;
+}
+
+.badge.low {
+    background-color: var(--dark);
+}
+.badge.warning {
+    background-color: var(--warning);
+}
+.badge.danger {
+    background-color: var(--danger);
+}
+
+hr{
+    background-color: var(--border);
+    border-width: 0;
+    height: 1px;
+    color: var(--border);
+
+}
+
+.add--icon{
+    font-size: 20px;
+    margin-left: -6px;
+    margin-left: -5px;
+    margin-right: 10px;
+}
+

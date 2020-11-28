@@ -1,0 +1,118 @@
+/** font import **/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+
+/** css variables **/
+:root {
+--space-l: 24px;
+--space-m: 16px;
+--space-s: 8px;
+
+--active: #DADEE6;
+--text-primary: #212121;
+
+--dark: #9DA3B0;
+--warning: #E44512;
+--danger: #E4B612;
+
+--hover-bg: rgba(218,222,230,0.45);
+--light-bg: #fff;
+
+--border: #E3E7EC;
+
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #212121;
+    background-color: #fff;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+h4 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+h5 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+h6 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+
+.container {
+    padding-top: var(--space-m);
+    padding-left: var(--space-m);
+}
+
+
+
+
+
+.k__title {
+    margin-bottom: 0.875rem;
+}
+
+.mb-2 {
+    margin-bottom: var(--space-l);
+} 
+.mr-1{
+    margin-right: var(--space-m);
+}
+
+.mt-40 {
+    margin-top: 40px;
+}
+.mt-64 {
+    margin-top: 64px;
+}
+
+.mt-2 {
+    margin-top: var(--space-l);
+}
+
+.mb-s {
+    margin-bottom: var(--space-s);
+}
+
+
+.pl-1 {
+    padding-left: var(--space-m);
+}
+
+.pl-3 {
+    padding-left: var(--space-l);
+}
+
+
+.pr-1 {
+    padding-right: var(--space-m);
+}
+
+
+
+.p-1 {
+    padding: var(--space-s);
+}
+
+
+
+.text--secondary {
+    color: #606A7E;
+}

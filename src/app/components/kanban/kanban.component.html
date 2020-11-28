@@ -1,0 +1,86 @@
+<!-- 
+<div class="project--list" *ngIf="kanbanType !=='DetailedView'">
+  <div class="project card" *ngFor= "let project of projectDetails">
+    <span class="p-1"> 
+      <input  type="checkbox" name="check" id="project">
+    </span>
+    <p *ngIf="!project.isEdit" 
+    class="project--name p-1"
+    (dblclick)="editText(project)"
+    (click)="navigateTo(project)">{{project.projectName}}</p>
+    
+    <form *ngIf="project.isEdit" #projectForm = "ngForm" (ngSubmit)="onSubmit(projectForm)">
+      <input type="text" 
+      placeholder="Project name" 
+      autofocus 
+      name="project-name" id=""
+      class="formcontrol pl-1"
+       [(ngModel)]="project.projectName" 
+       (blur)="updateProjectName(project)">
+    </form>
+    <span class="p-1">
+      <i class="material-icons icon" 
+      (click)= "deleteProject(project)">delete_outline</i>
+    </span>
+  </div>
+  <div class="card add--project p-1">
+    <form #projectForm = "ngForm" (ngSubmit)="onSubmitProject(projectForm)">
+      <input type="text" 
+      placeholder="+ Add new"  
+      name="project-name" id=""
+      class="formcontrol" [(ngModel)]="projectName">
+  </form>
+  </div>
+</div> -->
+
+
+<div class="task--kanban" *ngIf="kanbanType ==='DetailedView'">
+<div  class="project--list example-list"  
+      cdkDropList
+      (cdkDropListDropped)="drop($event)"
+      (cdkDropListExited)="exit($event)"
+      [cdkDropListData]="projectDetails">
+  <div class="project card example-box" *ngFor= "let project of projectDetails" cdkDrag >
+    <span class="checkbox--container"> 
+      <input  type="checkbox" name="check" id="project">
+    </span>
+    <p *ngIf="!project.isEdit" 
+    class="project--name">{{project.taskName}}</p>
+    <div class="pr-1" (click) = editTask(modal,$event,project)>
+      <i class="material-icons icon" 
+      >edit_outline</i>
+    </div>
+  </div>
+  <div *ngIf="projectDetails.length === 0" class="empty"></div>
+</div>
+</div>
+<div class="card add--task">
+  <form #taskForm = "ngForm" (ngSubmit)="onSubmitTask(taskForm)">
+    <textarea  #taskInput
+    placeholder="+ Add new"  
+    name="taskName"
+    class="formcontrol" [(ngModel)]="taskName" (keyup)="adjustHeight($event)">
+    </textarea>
+</form>
+</div>
+
+
+<!-- <app-modal-popup #modal> 
+  <div class="edit--card p-1">
+    <form #taskForm = "ngForm" (ngSubmit)="onSubmitTask(taskForm)">
+      <textarea #taskInput name="w3review"
+      placeholder="Task"  
+      name="taskName"
+      class="formcontrol" (keyup)="adjustHeight($event)"  (click)="taskInput.select()" [(ngModel)]="edittaskName"
+       >
+      </textarea>
+  </form>
+  </div>
+</app-modal-popup> -->
+
+
+
+
+
+
+
